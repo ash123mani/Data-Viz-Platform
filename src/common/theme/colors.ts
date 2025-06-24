@@ -8,5 +8,9 @@ export const colors = {
 
   borderColor: '#525252',
 
+  yellowDark: '#DCFF7FFD',
+  yellowMedium: '#C9FF3B',
+  yellowLight: '#C8E972',
+
   transparent: 'transparent',
 }

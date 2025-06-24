@@ -1,13 +1,11 @@
 import Header from "../../screens/home/header";
-import {  Content } from "./styles.ts";
+import ChargingStationDashboard from "../../screens/home/charging-station-dashboard";
 
 function Root() {
   return (
     <>
       <Header />
-      <Content>
-            Content Box
-      </Content>
+      <ChargingStationDashboard />
     </>
   )
 }

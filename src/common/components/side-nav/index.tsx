@@ -1,5 +1,5 @@
 import { Nav } from "./styles.ts";
-import type { IconType } from "../../assets/icons/actions";
+import type { IconType } from "../Icon/action-icons";
 import IconButton from "../icon-button";
 
 export type MenuItem = {

@@ -1,5 +1,5 @@
 
-import Tabs, { type TabItem } from "../../../components/tabs";
+import Tabs, { type TabItem } from "../../../common/components/tabs";
 import { useCallback, useState } from "react";
 
 const items: TabItem[] =  [

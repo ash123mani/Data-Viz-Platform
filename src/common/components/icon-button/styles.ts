@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import type { IconButtonProps } from "./index.tsx";
 
 type BtnProps = {
     variant?: IconButtonProps["variant"];
 }
 
 export const Btn = styled.button<BtnProps>`
-    padding: ${({ theme }) => theme.spacing.xs};
+    padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.sm}`};
     border-radius: ${({ theme }) => theme.borderRadius.md};
     background-color: ${({ theme, variant }) => {
     if (variant === 'filled') return theme.colors.blackMedium;
@@ -15,4 +16,7 @@ export const Btn = styled.button<BtnProps>`
     if (variant === 'filled') return `${theme.borderRadius.xxsm} solid ${theme.colors.whiteLight}`;
     if (variant === 'ghost') return `none`;
   }};
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import { Container, Main } from "./style.tsx";
-import SideNav, { type MenuItem } from "../side-nav";
+import SideNav, { type MenuItem } from "../../common/components/side-nav";
 import { useCallback, useState } from "react";
 
 const items: MenuItem[] =  [

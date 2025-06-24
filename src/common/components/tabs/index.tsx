@@ -1,4 +1,4 @@
-import { Container } from "../../screens/home/header/styles.tsx";
+import { Container } from "../../../screens/home/header/styles.tsx";
 import Button from "../button";
 
 export type TabItem = {
