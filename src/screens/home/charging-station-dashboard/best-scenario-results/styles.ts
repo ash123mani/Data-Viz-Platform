@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import IconButton from "../../../../common/components/icon-button";
 import Icon from "../../../../common/components/Icon";
+import Typography from "../../../../common/components/typography";
 
 export const Container = styled.div`
     display: flex;
@@ -22,9 +23,9 @@ export const StyledIcon = styled(Icon)<IconProps>`
     transform: ${({ isExpanded }) => isExpanded ? `rotate(-90deg)` : `rotate(0deg)`};
 `
 
-export const Title = styled.span`
+export const Title = styled(Typography)`
  color: ${({ theme }) => theme.colors.yellowDark};
-    margin-left: ${({ theme }) => theme.spacing.sm};
+    margin-left: ${({ theme }) => theme.spacing.md};
    
 `
 
@@ -37,14 +38,14 @@ export const StyledIconButton = styled(IconButton)<IconProps>`
 `
 export const AlertBox = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.yellowLight};
-    border-radius: ${({ theme }) => theme.spacing.md};
-    padding: ${({ theme }) => theme.spacing.sm};
+    border-radius: ${({ theme }) => theme.spacing.sm};
+    padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.lg}`};
     display: flex;
     justify-content: space-between;
     align-items: center;
 `
 
-export const AlertText = styled.span`
+export const AlertText = styled(Typography)`
     color: ${({ theme }) => theme.colors.yellowMedium};
 `
 

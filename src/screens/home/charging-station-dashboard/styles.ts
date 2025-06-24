@@ -7,4 +7,5 @@ export const Content = styled.div`
     border: ${({ theme }) => `1px solid ${theme.colors.borderColor}`};
     padding: ${({ theme }) => `${theme.spacing.lg}`};
     gap: ${({ theme }) => theme.spacing.xl};
+    background-color: ${({ theme }) => theme.colors.blackMedium};
 `

@@ -5,6 +5,8 @@ export const Container = styled.main`
     height: 100%;
     display: flex;
     flex-direction: row;
+    border: 1px solid ${({ theme }) => theme.colors.borderColor};
+    border-radius: ${({ theme }) => theme.borderRadius.lg};
 `
 
 export const Main = styled.main`

@@ -12,14 +12,13 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         height: 100%;
         color: ${({ theme }) => theme.colors.whiteDark};
-    }
-
-    :root {
-        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+        font-family: 'Inter', sans-serif;
     }
     
     #root {
         width: 100%;
+        background-color: ${({ theme }) => theme.colors.blackDark};
+
     }
 `
 

@@ -1,5 +1,6 @@
 import { Container } from "../../../screens/home/header/styles.tsx";
 import Button from "../button";
+import Typography from "../typography";
 
 export type TabItem = {
     key: string;
@@ -24,7 +25,9 @@ export default function Tabs({ items, onTabItemClick, selectedKey }: TabProps) {
             onClick={() => onTabItemClick(key)}
             variant={isSelected ? 'filled' : 'ghost'}
           >
-            {label}
+            <Typography variant="bodyMdTight" as="span">
+              {label}
+            </Typography>
           </Button>
         )
       })}
