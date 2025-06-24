@@ -1,5 +1,15 @@
+import Header from "../../screens/home/header";
+import { Container, Content } from "./styles.ts";
+
 function Root() {
-  return <h1>Hello world</h1>;
+  return (
+    <>
+      <Header />
+      <Content>
+            Content Box
+      </Content>
+    </>
+  )
 }
 
 export default Root;

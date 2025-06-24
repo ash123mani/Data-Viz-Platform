@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 
-
 const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
@@ -11,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
     body {
         display: flex;
         min-height: 100vh;
+        height: 100%;
+        color: ${({ theme }) => theme.colors.whiteDark};
     }
 
     :root {
