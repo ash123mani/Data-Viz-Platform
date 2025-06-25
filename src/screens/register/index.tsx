@@ -44,7 +44,7 @@ export default function RegisterScreen() {
         {error && <Typography variant="bodySm" as="p">{error}</Typography>}
       </Form>
       <Typography variant="caption" as="p">or</Typography>
-      <GoogleOAuthProvider clientId='617077149465-hl0afq35fdonkeka35amgahcl7kliuej.apps.googleusercontent.com'>
+      <GoogleOAuthProvider clientId='617077149465-a6ir2gdio3filqe1469fg11scsfibhs0.apps.googleusercontent.com'>
         <GoogleLogin
           onSuccess={googleSignIn}
         />
