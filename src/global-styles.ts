@@ -17,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
     
     #root {
         background-color: ${({ theme }) => theme.colors.blackDark};
-
     }
 `
 

@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
+import Button from "../../common/components/button";
 
 type PillProps = {
     isSelected: boolean;
 }
 
-export const PillBox = styled.div<PillProps>`
+export const PillBox = styled(Button)<PillProps>`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,6 +15,7 @@ export const PillBox = styled.div<PillProps>`
      padding: ${({ theme }) =>  `${theme.spacing.sm} ${theme.spacing.md}`};
     border-radius: ${({ theme }) => theme.borderRadius.max};
     border: 1px solid ${({ theme }) => theme.colors.borderColor};
+    color: ${({ theme }) => theme.colors.whiteDark};
     cursor: pointer;
     
     &:hover  {

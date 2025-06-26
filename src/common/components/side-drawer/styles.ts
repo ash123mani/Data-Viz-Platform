@@ -22,8 +22,8 @@ export const Drawer = styled.div<{
     position: fixed;
     top: 0;
     ${({ position }) => position}: 0;
-    width: ${({ width }) => width || '320px'};
     height: ${({ height }) => height || '100%'};
+    width: '100%';
     background: ${({ theme }) => theme.colors.blackDark};
     box-shadow: ${({ position }) =>
     position === 'right' ? '-2px 0 8px rgba(0, 0, 0, 0.1)' : '2px 0 8px rgba(0, 0, 0, 0.1)'};
@@ -40,6 +40,10 @@ export const Drawer = styled.div<{
     border: 1px solid ${({ theme }) => theme.colors.borderColor};
     border-top-right-radius: ${({ theme }) => theme.borderRadius.lg};
     border-bottom-right-radius: ${({ theme }) => theme.borderRadius.lg};
+
+    @media ${({ theme }) => theme.mediaQuery.laptop} {
+        width: ${({ width }) => width || '320px'};
+    }
 `;
 
 export const Header = styled.div`

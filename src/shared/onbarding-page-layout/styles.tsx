@@ -6,6 +6,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     gap: ${({ theme }) => theme.spacing.lg};
+    width: 100vw;
 `
 
 export const ActionBtns = styled.nav`

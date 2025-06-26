@@ -1,18 +1,18 @@
 import { IconsBox, PillBox } from "./styles.ts";
-import Typography from "../../common/components/typography";
 import Icon from "../../common/components/Icon";
+import type { ButtonHTMLAttributes } from "react";
 
 export type PillProps = {
     label: string;
-    onClick: (pillKey: PillProps['pillKey']) => void;
+    onPillClick: (pillKey: number | string) => void;
     isSelected: boolean;
-    pillKey: string | number;
-}
+    pillKey: number | string;
+} &  ButtonHTMLAttributes<HTMLButtonElement>
 
-export default function Pill({ label, onClick , isSelected, pillKey }:PillProps) {
+export default function Pill({ label, onPillClick , isSelected, pillKey, ...rest }:PillProps) {
   return (
-    <PillBox role="button" onClick={() => onClick(pillKey)} isSelected={isSelected}>
-      <Typography variant="label" color={isSelected ? "yellowDark": "whiteLight"}>{label}</Typography>
+    <PillBox  role="button" onClick={() => onPillClick(pillKey)} isSelected={isSelected} {...rest}>
+      {label}
       <IconsBox>
         <Icon icon="stars" height="20px" width="20px"/>
         <Icon icon={isSelected ?  "check": "plus"} />

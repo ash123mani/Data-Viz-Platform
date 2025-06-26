@@ -1,8 +1,9 @@
 import { Card } from "../../../../shared/card";
 import Typography from "../../../../common/components/typography";
-import Pill, { type PillProps } from "../../../../shared/pill";
+import Pill from "../../../../shared/pill";
 import { VariableCategory, VariablesBox } from "./styles.tsx";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import CollapsibleContent from "../../../../shared/collapsible-content";
 
 const variables = {
   categories: [
@@ -26,9 +27,11 @@ const variables = {
 }
 
 export default function  EditVariablesSection() {
-  const [selectedVariables, setSelectedVariables] = useState<PillProps['pillKey'][]>([]);
+  const [selectedVariables, setSelectedVariables] = useState<(number | string)[]>([]);
+  const [showMessage, setShowMessage] = useState(false);
+  const timerRef = useRef<number | null>(null);
 
-  const handleSelectedVariable = useCallback((variable: PillProps['pillKey']) => {
+  const handleSelectedVariable = useCallback((variable: number | string) => {
     if (selectedVariables.includes(variable)) {
       const newVariables = selectedVariables.filter((v) => v !== variable);
       setSelectedVariables(newVariables);
@@ -36,6 +39,19 @@ export default function  EditVariablesSection() {
       setSelectedVariables([...selectedVariables, variable]);
     }
   }, [selectedVariables])
+
+  const handleMouseEnter = useCallback(() => {
+    timerRef.current = window.setTimeout(() => {
+      setShowMessage(true);
+    }, 3000); // 3 seconds
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    setShowMessage(false); // Hide message if mouse leaves early
+  }, [])
 
   return (
     <Card>
@@ -48,8 +64,10 @@ export default function  EditVariablesSection() {
                 return <Pill
                   label={variable}
                   pillKey={variable}
-                  onClick={handleSelectedVariable}
+                  onPillClick={handleSelectedVariable}
                   isSelected={selectedVariables.includes(variable)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 />
               })}
             </VariablesBox>
@@ -57,6 +75,9 @@ export default function  EditVariablesSection() {
           </VariableCategory>
         )
       })}
+      {showMessage && <Card>
+        <CollapsibleContent>{null}</CollapsibleContent>
+      </Card>}
     </Card>
   )
 }

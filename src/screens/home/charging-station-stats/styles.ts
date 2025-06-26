@@ -3,9 +3,15 @@ import { Card } from "../../../shared/card";
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: ${({ theme }) => theme.spacing.md};
     margin-top: ${({ theme }) => theme.spacing.xl};
+    
+
+    @media ${({ theme }) => theme.mediaQuery.laptop} {
+        flex-direction: row;
+    }
+    
 `
 
 export const GraphsContainer = styled.div`
