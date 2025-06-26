@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     }
     
     #root {
-        width: 100%;
         background-color: ${({ theme }) => theme.colors.blackDark};
 
     }
