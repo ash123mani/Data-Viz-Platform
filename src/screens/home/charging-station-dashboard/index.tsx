@@ -3,6 +3,7 @@ import ChargingStationDashboardHeader from "./header";
 import BestScenarioResults from "./best-scenario-results";
 import SideDrawer from "../../../common/components/side-drawer";
 import { useCallback, useState } from "react";
+import EditVariablesSection from "./edit-variables-section";
 
 export default function ChargingStationDashboard() {
   const [showEditVariablesDrawer, setShowEditVariablesDrawer] = useState<boolean>(false);
@@ -20,7 +21,9 @@ export default function ChargingStationDashboard() {
     <Content>
       <ChargingStationDashboardHeader onEditVariablesClick={handleEditVariablesClick} />
       <BestScenarioResults />
-      <SideDrawer isOpen={showEditVariablesDrawer} title="Edit Variables" onClose={handleEditVariablesClose} width="600px">Hole</SideDrawer>
+      <SideDrawer isOpen={showEditVariablesDrawer} title="Edit Variables" onClose={handleEditVariablesClose} width="600px">
+        <EditVariablesSection />
+      </SideDrawer>
     </Content>
   )
 }

@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import theme from "../../theme";
 
 type TypographyVariant =
     | 'headingLg'
@@ -15,6 +16,7 @@ type TypographyVariant =
 
 export interface TypographyProps {
     variant: TypographyVariant;
+  color?: keyof typeof theme.colors;
 }
 
 export const variantStyles = {

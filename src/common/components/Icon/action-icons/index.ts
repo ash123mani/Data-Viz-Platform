@@ -7,8 +7,10 @@ import stars from './stars.svg';
 import options from './options.svg'
 import chevronDown from './chevron-down.svg';
 import close from './close.svg';
+import check from './check.svg';
+import plus from './plus.svg';
 
-const icons = { hamburger, home, thunder,upload, refresh, stars, options, chevronDown, close };
+const icons = { hamburger, home, thunder,upload, refresh, stars, options, chevronDown, close,check, plus };
 
 export type IconType = keyof typeof icons;
 
