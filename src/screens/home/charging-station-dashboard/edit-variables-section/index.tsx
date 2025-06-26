@@ -5,27 +5,6 @@ import { VariableCategory, VariablesBox } from "./styles.tsx";
 import { useCallback, useRef, useState } from "react";
 import CollapsibleContent from "../../../../shared/collapsible-content";
 
-const variables = {
-  categories: [
-    {
-      name: "Variable Catrgory 1",
-      variables: [
-        "Carbon 1",
-        "Co2 Distribution",
-        "Fleet sizing"
-      ]
-    },
-    {
-      name: "Variable Catrgory 2",
-      variables: [
-        "Parking Rate",
-        "Border Rate",
-        "Request rate"
-      ]
-    }
-  ]
-}
-
 export default function  EditVariablesSection() {
   const [selectedVariables, setSelectedVariables] = useState<(number | string)[]>([]);
   const [showMessage, setShowMessage] = useState(false);
@@ -80,4 +59,25 @@ export default function  EditVariablesSection() {
       </Card>}
     </Card>
   )
+}
+
+const variables = {
+  categories: [
+    {
+      name: "Variable Catrgory 1",
+      variables: [
+        "Carbon 1",
+        "Co2 Distribution",
+        "Fleet sizing"
+      ]
+    },
+    {
+      name: "Variable Catrgory 2",
+      variables: [
+        "Parking Rate",
+        "Border Rate",
+        "Request rate"
+      ]
+    }
+  ]
 }
